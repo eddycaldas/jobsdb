@@ -7,9 +7,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded())
 
 const routes = {
-    employee: require('./routes/employee')
+    employee: require('./routes/employee'),
+    employer: require('./routes/employer')
 }
 
 app.use('/employee', routes.employee)
+app.use('/employer', routes.employer)
 
 app.listen(PORT, () => console.log(`listening ${PORT}`))
