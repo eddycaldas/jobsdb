@@ -4,7 +4,8 @@ const bodyParser = require('body-parser')
 const PORT = process.env.PORT ||8080
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('public'))
 
 const routes = {
     employee: require('./routes/employee'),
