@@ -34,5 +34,14 @@ module.exports = {
         list() {
             return knex('employer')
         }
+    },
+    getOneByEmail: function(email) {
+        return knex('employer').where('email', email).first()
+    },
+    create: function(employer) {
+        return knex('employer').insert(employer, 'id').then(ids => {
+          return ids[0]
+        })
     }
+
 }

@@ -7,6 +7,8 @@ exports.up = function(knex, Promise) {
         table.text('image')
         table.text('description')
         table.integer('rating')
+        table.text('email').unique().notNullable();
+        table.text('password').notNullable();
     })
   };
   
